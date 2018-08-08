@@ -9,6 +9,5 @@ class Actor < ActiveRecord::Base
   def list_roles
     roles = self.characters
     shows = self.shows
-    roles.flatten
   end
 end
