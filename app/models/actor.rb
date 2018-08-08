@@ -7,8 +7,10 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
-    roles = self.characters.map {|char| char.name}
-    shows = self.characters.map {|char| char.show.name}
-    roles.concat(shows)
+    roles = [] 
+    self.characters.each do |char| 
+      roles << char.name
+      roles << char.show.name
+    end
   end
 end
