@@ -8,6 +8,6 @@ class Actor < ActiveRecord::Base
 
   def list_roles
     roles = self.characters
-    shows = self.shows
+    shows = roles.map {|char| char.show}
   end
 end
