@@ -7,7 +7,7 @@ class Actor < ActiveRecord::Base
   end
 
   def list_roles
-    roles = self.characters.name
+    roles = self.characters.map {|char| char.name}
     shows = roles.map {|char| char.show.name}
     roles.concat(shows)
   end
